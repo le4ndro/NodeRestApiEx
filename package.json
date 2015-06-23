@@ -1,0 +1,14 @@
+{
+  "name": "res",
+  "version": "1.0.0",
+  "description": "teste de rest com node.js",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.10.2",
+    "express": "latest",
+    "mongoose": "latest",
+    "node-restful": "latest"
+  },
+  "author": "Leandro Abreu de Souza",
+  "license": "ISC"
+}
