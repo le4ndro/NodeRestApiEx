@@ -3,7 +3,8 @@ var cors = require('cors');
 var	mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
-mongoose.connect('mongodb://localhost/rest_test_db');
+//mongoose.connect('mongodb://localhost/rest_test_db');
+mongoose.connect('mongodb://mongo/rest_test_db');
 
 var app = express();
 

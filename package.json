@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "teste de rest com node.js",
   "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "body-parser": "^1.10.2",
     "cors": "^2.8.4",
