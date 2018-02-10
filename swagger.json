@@ -1,0 +1,275 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a sample server Booktore server.",
+    "version": "1.0.0",
+    "title": "Bookstore sample API",
+    "termsOfService": "http://test.com/terms/",
+    "contact": {
+      "email": "teste@com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "localhost:3001",
+  "basePath": "/api",
+  "tags": [
+    {
+      "name": "Livros",
+      "description": "Everything about your Books",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "http://swagger.io"
+      }
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/livro": {
+      "post": {
+        "tags": [
+          "livro"
+        ],
+        "summary": "Add a new book to the store",
+        "description": "",
+        "operationId": "addBook",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Livro object that needs to be added to the store",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Livro"
+            }
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "livro"
+        ],
+        "summary": "Get all books",
+        "description": "Returns all book",
+        "operationId": "getBooks",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Livro"
+            }
+          },
+          "404": {
+            "description": "Resource not found"
+          }
+        }
+      }
+    },
+    "/livro/{livroId}": {
+      "get": {
+        "tags": [
+          "livro"
+        ],
+        "summary": "Find book by ID",
+        "description": "Returns a single book",
+        "operationId": "getBookById",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "livroId",
+            "in": "path",
+            "description": "ID of book to return",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Livro"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Book not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "livro"
+        ],
+        "summary": "Updates a book in the store with form data",
+        "description": "",
+        "operationId": "updateBookWithForm",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "livroId",
+            "in": "path",
+            "description": "ID of book that needs to be updated",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "titulo",
+            "in": "formData",
+            "description": "Updated title of the book",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "autor",
+            "in": "formData",
+            "description": "Updated author of the book",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "editora",
+            "in": "formData",
+            "description": "Updated publisher of the book",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "isbn",
+            "in": "formData",
+            "description": "Updated isbn of the book",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "edicao",
+            "in": "formData",
+            "description": "Updated edition of the book",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "idioma",
+            "in": "formData",
+            "description": "Updated language of the book",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "preco",
+            "in": "formData",
+            "description": "Updated price of the book",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "livro"
+        ],
+        "summary": "Deletes a book",
+        "description": "",
+        "operationId": "deleteBook",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "livroId",
+            "in": "path",
+            "description": "Book id to delete",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Book successfuly deleted"
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Book not found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Livro": {
+      "type": "object",
+      "properties": {
+        "titulo": {
+          "type": "string"
+        },
+        "autor": {
+          "type": "string"
+        },
+        "editora": {
+          "type": "string"
+        },
+        "isbn": {
+          "type": "string"
+        },
+        "edicao": {
+          "type": "string"
+        },
+        "ano": {
+          "type": "integer"
+        },
+        "idioma": {
+          "type": "string"
+        },
+        "preco": {
+          "type": "number"
+        }
+      },
+      "xml": {
+        "name": "Livro"
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  }
+}

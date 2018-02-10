@@ -11,7 +11,8 @@
     "cors": "^2.8.4",
     "express": "latest",
     "mongoose": "latest",
-    "node-restful": "latest"
+    "node-restful": "latest",
+    "swagger-ui-express": "^2.0.15"
   },
   "author": "Leandro Abreu de Souza",
   "license": "ISC"
