@@ -31,7 +31,7 @@ $ npm install
 $ npm start
 ```
 
-3. The API will be served at http://localhost:3000.
+3. The API will be served at http://localhost:3001.
 
 ### Running the Sample With Docker
 
