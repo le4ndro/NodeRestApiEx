@@ -1,23 +1,23 @@
-var express = require('express');
-var cors = require('cors');
-var	mongoose = require('mongoose');
-var bodyParser = require('body-parser');
+/* eslint-disable no-console */
+const express = require('express');
+const cors = require('cors');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
-var swaggerUI = require('swagger-ui-express');
-var swaggerDocument = require('./swagger.json');
+const swaggerUI = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
 
-//Local
-//mongoose.connect('mongodb://localhost/rest_test_db');
-//Docker
+// Local
+// mongoose.connect('mongodb://localhost/rest_test_db');
+// Docker
 mongoose.connect('mongodb://mongo/rest_test_db');
 
-var app = express();
+const app = express();
 
 app.use(cors());
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
 
 app.use('/api', require('./routes/api'));
 
