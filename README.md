@@ -10,10 +10,10 @@ These instructions will get you a copy of the project up and running on your loc
 
 What things you need to install the software
 
-* Node.js
-* MongoDB
-* Docker 
-* Docker Compose
+- Node.js
+- MongoDB
+- Docker
+- Docker Compose
 
 ### Installing
 
@@ -24,14 +24,20 @@ $ git clone https://github.com/le4ndro/NodeRestApiEx.git
 $ cd NodeRestApiEx
 ```
 
-2. Install dependencies and run the application
+2. Make a local copy of .env.example and edit as needed
+
+```
+$ cp .env.example .env
+```
+
+3. Install dependencies and run the application
 
 ```
 $ npm install
 $ npm start
 ```
 
-3. The API will be served at http://localhost:3001.
+4. The API will be served at http://localhost:3001.
 
 ### Running the Sample With Docker
 
@@ -45,10 +51,10 @@ $ docker-compose up
 
 ## Built With
 
-* [Node.js](https://nodejs.org/en/) - JavaScript runtime
-* [Express](http://expressjs.com/en/4x/api.html) - Web framework
-* [Docker](https://docs.docker.com/) - Container platform
-* [Swagger-ui](https://swagger.io/swagger-ui/) - API documentation and specification
+- [Node.js](https://nodejs.org/en/) - JavaScript runtime
+- [Express](http://expressjs.com/en/4x/api.html) - Web framework
+- [Docker](https://docs.docker.com/) - Container platform
+- [Swagger-ui](https://swagger.io/swagger-ui/) - API documentation and specification
 
 ## Versioning
 
@@ -56,7 +62,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Leandro Souza** - *Initial work*
+- **Leandro Souza** - _Initial work_
 
 ## License
 
@@ -64,4 +70,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-* This project is in development
+- This project is in development
